@@ -1,0 +1,9 @@
+{{outlet}}
+{{!-- {{htlbid-ad slot="gothamist/index/leaderboard"}} --}}
+
+{{#htlbid-ad slot="gothamist/index/leaderboard" as |ad|}}
+  {{ad.tag}}
+  e:{{ad.isEmpty}}
+  w:{{ad.width}}
+  h:{{ad.height}}
+{{/htlbid-ad}}

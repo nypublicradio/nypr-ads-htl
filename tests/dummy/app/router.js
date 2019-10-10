@@ -8,6 +8,8 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('htlbid-ad');
+  this.route('targeting-route');
+  this.route('non-targeting-route');
 });
 
 export default Router;
