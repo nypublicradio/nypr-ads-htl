@@ -1,37 +1,29 @@
-nypr-htl-ads
-==============================================================================
+# nypr-htl-ads
 
-[Short description of the addon.]
+An addon to simplify connecting NYPR web clients to our Hashtag Labs account.
 
+## Development
 
-Compatibility
-------------------------------------------------------------------------------
-
-* Ember.js v2.18 or above
-* Ember CLI v2.13 or above
-
-
-Installation
-------------------------------------------------------------------------------
-
-```
-ember install nypr-htl-ads
+Development requires nodejs 6+.
+```sh
+brew install nvm
+nvm install --lts
+nvm use --lts
 ```
 
+Install dependencies.
+```sh
+npm install
+```
 
-Usage
-------------------------------------------------------------------------------
+Build and run ember.
+_Note: To use your system's global ember simply type `ember`_
+```sh
+./node_modules/.bin/ember build
+./node_modules/.bin/ember serve
+```
 
-[Longer description of how to use the addon in apps.]
-
-
-Contributing
-------------------------------------------------------------------------------
-
-See the [Contributing](CONTRIBUTING.md) guide for details.
-
-
-License
-------------------------------------------------------------------------------
-
-This project is licensed under the [MIT License](LICENSE.md).
+Run Tests.
+```sh
+./node_modules/.bin/ember test
+```
