@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('htlbid-ad');
   this.route('targeting-route');
   this.route('non-targeting-route');
+  this.route('component-targeting-route');
 });
 
 export default Router;
