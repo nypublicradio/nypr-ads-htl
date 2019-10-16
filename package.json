@@ -1,5 +1,5 @@
 {
-  "name": "nypr-htl-ads",
+  "name": "nypr-ads-htl",
   "version": "0.0.0",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
@@ -55,5 +55,6 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  }
+  },
+  "homepage": "https://nypublicradio.github.io/nypr-ads-htl"
 }

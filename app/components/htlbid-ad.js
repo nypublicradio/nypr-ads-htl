@@ -1,1 +1,1 @@
-export { default } from 'nypr-htl-ads/components/htlbid-ad';
+export { default } from 'nypr-ads-htl/components/htlbid-ad';

@@ -1,4 +1,4 @@
-# nypr-htl-ads
+# nypr-ads-htl
 
 An addon to simplify connecting NYPR web clients to our Hashtag Labs account.
 

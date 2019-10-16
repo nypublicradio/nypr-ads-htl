@@ -3,7 +3,7 @@
 ## Installation
 
 * `git clone <repository-url>`
-* `cd nypr-htl-ads`
+* `cd nypr-ads-htl`
 * `npm install`
 
 ## Linting

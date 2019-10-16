@@ -1,1 +1,1 @@
-export { default } from 'nypr-htl-ads/components/do-targeting';
+export { default } from 'nypr-ads-htl/components/do-targeting';

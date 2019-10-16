@@ -3,7 +3,7 @@ import {
   doTargetingForPath, clearTargetingForPath,
   doTargetingForModels, clearTargetingForModels,
   doTargeting, clearTargeting
-} from 'nypr-htl-ads'
+} from 'nypr-ads-htl'
 
 export default Route.extend({
 

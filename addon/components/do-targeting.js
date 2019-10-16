@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { doTargeting, clearTargeting } from 'nypr-htl-ads';
+import { doTargeting, clearTargeting } from 'nypr-ads-htl';
 
 
 /**
