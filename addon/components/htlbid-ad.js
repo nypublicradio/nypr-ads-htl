@@ -11,21 +11,7 @@ import layout from '../templates/components/htlbid-ad';
     {{htlbid-ad
       slotClassNames="l-constrained aligncenter leaderboard"
       slot="leaderboard/wqxr_leaderboard_demo"
-      mapping=(array
-        (array 0
-          (array
-            (array 300 250)
-            (array 320 50)
-          )
-        )
-        (array 750
-          (array
-            (array 300 600)
-            (array 728 90)
-            (array 300 250)
-          )
-        )
-      )
+      sizes="0x0:300x250,320x50|750x0:300x600,728x90,300x250"
       slotRenderEndedAction=(action 'handleSlotRendered')
       eager=true
     /}}
@@ -43,14 +29,16 @@ export default Component.extend({
   */
   slot: null,
   /**
-    A mapping of breakpoints to ad sizes for responsive ad display.
+    A string representing responsive breakpoints and valid ad sizes
 
-    `[[min-size-breakpoint1,[width1,height1]],[min-size-breakpoint2,[width2,height2]]]`
+    `{breakpoint1}x0:{width1}x{height1}|{breakpoint2}x0:{width2a}x{height2a},{width2b}x{height2b}`
 
-    @argument mapping
-    @type {Array}
+    `0x0:300x50|758x0:728x90,728x200`
+
+    @argument sizes
+    @type String
   */
-  mapping: null,
+  sizes: null,
   /**
     Space separated list of CSS class names.
 
@@ -93,14 +81,6 @@ export default Component.extend({
     this._setStatus(true, 0, 0);
     let ref = this.ref || `ad_${guidFor(this)}`
     this.set('ref', ref);
-
-    if (this.mapping) {
-      let sizes = this.mapping.map(([breakpoint, sizes]) => {
-        let sizeString = sizes.map(([w,h])=>`${w}x${h}`).join(",");
-        return `${breakpoint}x0:${sizeString}`
-      }).join("|")
-      this.set('sizes', sizes);
-    }
   },
 
   didInsertElement() {
