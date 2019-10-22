@@ -15,7 +15,8 @@ module.exports = {
 
   contentFor: function(type, config) {
     if (type === 'head' && config.environment !== 'test') {
-      return '<script src="https://htlbid.com/v3/gothamist.com/htlbid.js"></script>';
+      var scriptURL = config['nypr-ads-htl'] && config['nypr-ads-htl'].scriptURL;
+      return '<script src="' + scriptURL + '"></script>';
     } else {
       return '';
     }
