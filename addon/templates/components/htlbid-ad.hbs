@@ -1,9 +1,10 @@
 {{#if (has-block)}}
   {{yield (hash
     tag=(component "htlbid-ad/tag"
-         slot=@slot
-         isEager=this.isEager
-         sizes=this.sizes
+         slot=slotName
+         isEager=@isEager
+         isOOP=@isOOP
+         sizes=@sizes
          ref=this.ref
          slotClassNames=slotClassNames
         )
@@ -14,9 +15,10 @@
 {{else}}
   <div
     class={{concat "htl-ad " slotClassNames}}
-    data-eager={{isEager}}
-    data-unit={{slot}}
-    data-sizes={{sizes}}
+    data-eager={{@isEager}}
+    data-oop={{@isOOP}}
+    data-unit={{slotName}}
+    data-sizes={{@sizes}}
     data-ref={{ref}}
   ></div>
 {{/if}}

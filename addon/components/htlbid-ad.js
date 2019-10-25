@@ -1,7 +1,9 @@
 import Component from '@ember/component';
+import { get } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
 import htlbid from 'htlbid';
 import layout from '../templates/components/htlbid-ad';
+import config from 'ember-get-config';
 
 /**
   Adds a HTLBID ad slot to a page.
@@ -13,7 +15,7 @@ import layout from '../templates/components/htlbid-ad';
       slot="leaderboard/wqxr_leaderboard_demo"
       sizes="0x0:300x250,320x50|750x0:300x600,728x90,300x250"
       slotRenderEndedAction=(action 'handleSlotRendered')
-      eager=true
+      isEager=true
     /}}
   ```
 
@@ -58,22 +60,39 @@ export default Component.extend({
   slotRenderEndedAction: () => {},
   /**
     By default, HTLBID lazy-loads everything outside the initial viewport.
-    Adding the "data-eager" attribute notifies HTLBID that a specific unit
+    setting isEager to true notifies HTLBID that a specific unit
     should be loaded immediately. 1x1s, pixels, interstitials, skins,
     out-of-page and other oddball units should generally be eager loaded
     to work correctly.
 
-    @argument eager
+    @argument isEager
     @type {Boolean}
     @default [false]
     @optional
   */
-  eager: false,
+  isEager: false,
+  /**
+    Setting isOOP to true specifies that the ad is an "out of page" unit. This is
+    primarily used for interstitials, skins, and for ads that need to manipulate
+    the DOM directly, outside of any iframe. OOP units do not have sizemapping.
+
+    @argument isOOP
+    @type {Boolean}
+    @default [false]
+    @optional
+  */
+  isOOP: false,
+
 
   _setStatus(isEmpty, width, height) {
     this.set('isEmpty', isEmpty);
     this.set('width', width);
     this.set('height', height);
+    if (get(config, 'nypr-ads-htl.prefix')) {
+      this.set('slotName', `${get(config, 'nypr-ads-htl.prefix')}/${this.slot}`)
+    } else {
+      this.set('slotName', this.slot)
+    }
   },
 
   init() {

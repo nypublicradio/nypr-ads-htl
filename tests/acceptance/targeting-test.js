@@ -7,9 +7,6 @@ import htlbid from 'htlbid';
 module('Acceptance | targeting', function(hooks) {
   setupApplicationTest(hooks);
 
-  hooks.beforeEach(function() {
-  });
-
   test('visiting /targeting-route', async function(assert) {
     sinon.stub(htlbid.cmd, 'push').callsFake(f => f());
 

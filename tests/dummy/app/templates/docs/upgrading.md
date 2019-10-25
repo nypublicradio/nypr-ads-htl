@@ -1,10 +1,15 @@
 # Migrating from nypr-ads
 
-## Step 1 - Install nypr-ads-htl
+## Step 1 - Install the nypr-ads-htl addon
 
 ```
 ember install nypr-ads-htl
 ```
+
+## Step 2 - Configure the addon
+
+See the {{#link-to 'config'}}configuration page{{/link-to}} for details
+
 
 ## Step 2 - Replace the dfp-ad components with htl-ad components
 
