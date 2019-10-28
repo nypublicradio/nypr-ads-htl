@@ -1,8 +1,8 @@
   <div
     class={{concat "htl-ad " slotClassNames}}
-    data-eager={{isEager}}
-    data-oop={{isOOP}}
-    data-unit={{slot}}
-    data-sizes={{sizes}}
-    data-ref={{ref}}
+    data-unit={{@slot}}
+    data-eager={{@isEager}}
+    data-oop={{@isOOP}}
+    data-sizes={{@sizes}}
+    data-ref={{@ref}}
   ></div>

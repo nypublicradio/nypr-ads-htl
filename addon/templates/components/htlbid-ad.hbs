@@ -5,7 +5,7 @@
          isEager=@isEager
          isOOP=@isOOP
          sizes=@sizes
-         ref=this.ref
+         ref=ref
          slotClassNames=slotClassNames
         )
     isEmpty=this.isEmpty
@@ -13,12 +13,12 @@
     height=this.height
   )}}
 {{else}}
-  <div
-    class={{concat "htl-ad " slotClassNames}}
-    data-eager={{@isEager}}
-    data-oop={{@isOOP}}
-    data-unit={{slotName}}
-    data-sizes={{@sizes}}
-    data-ref={{ref}}
-  ></div>
+  {{component "htlbid-ad/tag"
+    slot=slotName
+    isEager=@isEager
+    isOOP=@isOOP
+    sizes=@sizes
+    ref=ref
+    slotClassNames=slotClassNames
+  }}
 {{/if}}
