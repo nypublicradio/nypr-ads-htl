@@ -19,7 +19,7 @@ import config from 'ember-get-config';
     /}}
   ```
 
-  @class DfpAd
+  @class HtlbidAd
 */
 export default Component.extend({
   layout,

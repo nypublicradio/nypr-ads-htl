@@ -25,4 +25,4 @@ This should be set to the url of the hashtag labs script for your site.
 
 If you set a prefix here, it will be added to dfp slot names right after the network code. 
 
-For example, if you set a prefix of `_demo`, and pointed a `dfp-ad` component towards `wqxr/leaderboad`, it would send dfp request for the `6483581/_demo/wqxr/leaderboad` slot. You can use this to help organize your ad units by application or environment.
+For example, if you set a prefix of `_demo`, and pointed a `htlbid-ad` component towards `wqxr/leaderboad`, it would ask htl for the `_demo/wqxr/leaderboad` slot. You can use this to help organize your ad units by application or environment.
