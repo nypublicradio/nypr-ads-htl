@@ -3,12 +3,13 @@
 ## The htl-ad Component
 
 ```hbs
-  {{htl-ad
-    slotClassNames="l-constrained aligncenter leaderboard"
-    slot="leaderboard/gothamist_leaderboard"
-    isEager="leaderboard_ad_home"
-    sizes="0x0:300x50|758x0:728x90|1203x0:970x90,970x415"
-    slotRenderEndedAction=(action 'handleSlotRendered')
+  {{htlbid-ad
+    @slotClassNames="l-constrained aligncenter leaderboard"
+    @slot="leaderboard/gothamist_leaderboard"
+    @sizes="0x0:300x50|758x0:728x90|1203x0:970x90,970x415"
+    @slotRenderEndedAction=(action 'handleSlotRendered')
+    @isEager=true
+    @isOOP=true
   }}
 ```
 
@@ -23,11 +24,12 @@ Things you might want to know when using this addon:
   * for viewport sizes greater than or equal to 758px wide and less than 1203px wide, use ads from the `728 x 90` slot
   * for viewport sizes greater than or equal 1203px wide use `970 x 415`
 
-* The `isEager` parameter disables lazy-loading and causes the ad to be loaded immediately. 1x1s, pixels, interstitials, skins, out-of-page and other oddball units should generally be eager loaded to work correctly.
-
 * `slotRenderEndedAction` - optional
   * You can pass in an action to run when GPT sends the `slotRenderEnded` event for this ad slot.
 
+* The `isEager` parameter disables lazy-loading and causes the ad to be loaded immediately. 1x1s, pixels, interstitials, skins, out-of-page and other oddball units should generally be eager loaded to work correctly.
+
+* The `isOOP` parameter specifies that the ad is an "out of page" unit. This is primarily used for interstitials, skins, and for ads that need to manipulate the DOM directly, outside of any iframe. OOP units do not have sizemapping.
 
 ## Block Usage
 

@@ -11,11 +11,12 @@ import config from 'ember-get-config';
   Usage:
   ```hbs
     {{htlbid-ad
-      slotClassNames="l-constrained aligncenter leaderboard"
-      slot="leaderboard/wqxr_leaderboard_demo"
-      sizes="0x0:300x250,320x50|750x0:300x600,728x90,300x250"
-      slotRenderEndedAction=(action 'handleSlotRendered')
-      isEager=true
+      @slotClassNames="l-constrained aligncenter leaderboard"
+      @slot="leaderboard/wqxr_leaderboard_demo"
+      @sizes="0x0:300x250,320x50|750x0:300x600,728x90,300x250"
+      @slotRenderEndedAction=(action 'handleSlotRendered')
+      @isEager=true
+      @isOOP=true
     /}}
   ```
 
