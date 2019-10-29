@@ -1,12 +1,12 @@
 {{#if (has-block)}}
   {{yield (hash
     tag=(component "htlbid-ad/tag"
-         @slot=slotName
-         @ref=ref
-         @slotClassNames=@slotClassNames
-         @sizes=@sizes
-         @isEager=@isEager
-         @isOOP=@isOOP
+         slot=this.slotName
+         ref=this.ref
+         slotClassNames=@slotClassNames
+         sizes=@sizes
+         isEager=@isEager
+         isOOP=@isOOP
         )
     isEmpty=this.isEmpty
     width=this.width
@@ -14,11 +14,11 @@
   )}}
 {{else}}
   {{component "htlbid-ad/tag"
-    @slot=slotName
-    @ref=ref
-    @slotClassNames=@slotClassNames
-    @sizes=@sizes
-    @isEager=@isEager
-    @isOOP=@isOOP
+    slot=this.slotName
+    ref=this.ref
+    slotClassNames=@slotClassNames
+    sizes=@sizes
+    isEager=@isEager
+    isOOP=@isOOP
   }}
 {{/if}}

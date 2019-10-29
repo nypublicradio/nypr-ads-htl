@@ -3,14 +3,14 @@
 ## The htl-ad Component
 
 ```hbs
-  {{htlbid-ad
+  <HtlbidAd
     @slotClassNames="l-constrained aligncenter leaderboard"
     @slot="leaderboard/gothamist_leaderboard"
     @sizes="0x0:300x50|758x0:728x90|1203x0:970x90,970x415"
-    @slotRenderEndedAction=(action 'handleSlotRendered')
-    @isEager=true
-    @isOOP=true
-  }}
+    @slotRenderEndedAction={{action 'handleSlotRendered'}}
+    @isEager={{true}}
+    @isOOP={{true}}
+  />
 ```
 
 Things you might want to know when using this addon:
