@@ -1,5 +1,8 @@
 import Component from '@ember/component';
 import { get } from '@ember/object';
+import { computed }  from '@ember/object';
+import { reads } from '@ember/object/computed';
+import { getOwner }  from '@ember/application';
 import { guidFor } from '@ember/object/internals';
 import htlbid from 'htlbid';
 import layout from '../templates/components/htlbid-ad';
@@ -84,6 +87,11 @@ export default Component.extend({
   */
   isOOP: false,
 
+  fastboot: computed(function() {
+    let owner = getOwner(this);
+    return owner.lookup('service:fastboot');
+  }),
+  isFastBoot: reads('fastboot.isFastBoot'),
 
   _setStatus(isEmpty, width, height) {
     this.set('isEmpty', isEmpty);

@@ -1,24 +1,26 @@
-{{#if (has-block)}}
-  {{yield (hash
-    tag=(component "htlbid-ad/tag"
-         slot=this.slotName
-         ref=this.ref
-         slotClassNames=@slotClassNames
-         sizes=@sizes
-         isEager=@isEager
-         isOOP=@isOOP
-        )
-    isEmpty=this.isEmpty
-    width=this.width
-    height=this.height
-  )}}
-{{else}}
-  {{component "htlbid-ad/tag"
-    slot=this.slotName
-    ref=this.ref
-    slotClassNames=@slotClassNames
-    sizes=@sizes
-    isEager=@isEager
-    isOOP=@isOOP
-  }}
-{{/if}}
+{{#unless this.isFastBoot}}
+  {{#if (has-block)}}
+    {{yield (hash
+      tag=(component "htlbid-ad/tag"
+          slot=this.slotName
+          ref=this.ref
+          slotClassNames=@slotClassNames
+          sizes=@sizes
+          isEager=@isEager
+          isOOP=@isOOP
+          )
+      isEmpty=this.isEmpty
+      width=this.width
+      height=this.height
+    )}}
+  {{else}}
+    {{component "htlbid-ad/tag"
+      slot=this.slotName
+      ref=this.ref
+      slotClassNames=@slotClassNames
+      sizes=@sizes
+      isEager=@isEager
+      isOOP=@isOOP
+    }}
+  {{/if}}
+{{/unless}}
