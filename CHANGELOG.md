@@ -1,5 +1,8 @@
 # nypr-ads-htl Changelog
 
+## 0.1.3
+  - Prevent rendering in fastboot
+
 ## 0.1.2
   - Use `@` in less places
 
