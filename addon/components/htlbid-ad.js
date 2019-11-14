@@ -128,6 +128,6 @@ export default Component.extend({
 
   willDestroyElement() {
     this._super(...arguments);
-    //cleanup
+    htlbid.removeSlot(this.ref);
   }
 });
