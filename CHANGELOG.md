@@ -1,5 +1,8 @@
 # nypr-ads-htl Changelog
 
+## 0.1.5
+  - Safer handing when `htlbid` isn't ready
+
 ## 0.1.4
   - Add teardown handling
 
