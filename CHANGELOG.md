@@ -1,5 +1,8 @@
 # nypr-ads-htl Changelog
 
+## 0.1.4
+  - Add teardown handling
+
 ## 0.1.3
   - Prevent rendering in fastboot
 
