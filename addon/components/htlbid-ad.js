@@ -113,21 +113,24 @@ export default Component.extend({
 
   didInsertElement() {
     this._super(...arguments);
-
-    htlbid.on('slotRenderEnded', (slot) => {
-      if (slot.ref === this.ref) {
-        if (slot.isEmpty) {
-          this._setStatus(true, 0, 0);
-        } else {
-          this._setStatus(false, slot.getRenderedWidth(), slot.getRenderedHeight());
+    htlbid.cmd.push(() => {
+      htlbid.on('slotRenderEnded', (slot) => {
+        if (slot.ref === this.ref) {
+          if (slot.isEmpty) {
+            this._setStatus(true, 0, 0);
+          } else {
+            this._setStatus(false, slot.getRenderedWidth(), slot.getRenderedHeight());
+          }
+          this.slotRenderEndedAction(event);
         }
-        this.slotRenderEndedAction(event);
-      }
+      });
     });
   },
 
   willDestroyElement() {
     this._super(...arguments);
-    htlbid.removeSlot(this.ref);
+    htlbid.cmd.push(() => {
+      htlbid.removeSlot(this.ref);
+    });
   }
 });

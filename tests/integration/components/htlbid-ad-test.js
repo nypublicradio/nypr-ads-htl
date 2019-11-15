@@ -34,6 +34,7 @@ module('Integration | Component | htlbid-ad', function(hooks) {
   });
 
   test('it updates width and height', async function(assert) {
+    sinon.stub(htlbid.cmd, 'push').callsFake(f => f());
     sinon.stub(htlbid, 'on').callsFake((_,f) => f(mockSlot) );
     let ref = ('ad_test')
     this.set('ref', ref)
