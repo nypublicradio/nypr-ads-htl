@@ -116,6 +116,7 @@ export default Component.extend({
     htlbid.cmd.push(() => {
       htlbid.on('slotRenderEnded', (slot) => {
         if (slot.ref === this.ref) {
+          console.log('Ad rendered', slot) // eslint-disable-line no-console
           if (slot.isEmpty) {
             this._setStatus(true, 0, 0);
           } else {
