@@ -122,6 +122,8 @@ export default Component.extend({
             const width = ad.clientWidth;
             const height = ad.clientHeight;
             this._setStatus(false, width, height);
+          } else {
+            this._setStatus(true, 0, 0);
           }
           this.slotRenderEndedAction(slot);
         }
