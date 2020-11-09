@@ -75,18 +75,6 @@ export default Component.extend({
     @optional
   */
 
-  clearOnEmptyRefresh: false,
-  /**
-    When set to true, will clear the ad slot when
-    the slot attemps to refresh with a new ad
-    but returns empty.
-
-    @argument clearOnEmptyRefresh
-    @type {Boolean}
-    @default [false]
-    @optional
-  */
-
   isEager: false,
   /**
     Setting isOOP to true specifies that the ad is an "out of page" unit. This is
@@ -128,12 +116,12 @@ export default Component.extend({
     this._super(...arguments);
     htlbid.cmd.push(() => {
       htlbid.on('slotRenderEnded', (slot) => {
-        if (slot.ref === this.ref) {
-          if (slot.isEmpty && this.clearOnEmptyRefresh) {
-            htlbid.clear([slot.ref]);
-            this._setStatus(true, 0, 0);
-          } else if (!slot.isEmpty) {
-            this._setStatus(false, slot.getRenderedWidth(), slot.getRenderedHeight());
+        if (slot.ref === this.ref && !slot.isEmpty) {
+          const ad = document.getElementById(slot.id);
+          if (ad) {
+            const width = ad.clientWidth;
+            const height = ad.clientHeight;
+            this._setStatus(false, width, height);
           }
           this.slotRenderEndedAction(slot);
         }
