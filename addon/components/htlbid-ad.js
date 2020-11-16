@@ -74,6 +74,7 @@ export default Component.extend({
     @default [false]
     @optional
   */
+
   isEager: false,
   /**
     Setting isOOP to true specifies that the ad is an "out of page" unit. This is
@@ -115,13 +116,16 @@ export default Component.extend({
     this._super(...arguments);
     htlbid.cmd.push(() => {
       htlbid.on('slotRenderEnded', (slot) => {
-        if (slot.ref === this.ref) {
-          if (slot.isEmpty) {
-            this._setStatus(true, 0, 0);
+        if (slot.ref === this.ref && !slot.isEmpty) {
+          const ad = document.getElementById(slot.id);
+          if (ad) {
+            const width = ad.clientWidth;
+            const height = ad.clientHeight;
+            this._setStatus(false, width, height);
           } else {
-            this._setStatus(false, slot.getRenderedWidth(), slot.getRenderedHeight());
+            this._setStatus(true, 0, 0);
           }
-          this.slotRenderEndedAction(event);
+          this.slotRenderEndedAction(slot);
         }
       });
     });
