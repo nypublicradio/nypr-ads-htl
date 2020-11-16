@@ -1,5 +1,8 @@
 # nypr-ads-htl Changelog
 
+## 0.1.6
+  - More reliable handling of size on ad refresh  [#1]
+
 ## 0.1.5
   - Safer handing when `htlbid` isn't ready
 
